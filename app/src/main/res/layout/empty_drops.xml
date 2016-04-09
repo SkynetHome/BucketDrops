@@ -9,6 +9,7 @@
         android:layout_width="@dimen/iv_logo_size"
         android:layout_height="@dimen/iv_logo_size"
         android:src="@drawable/logo"
+        android:scaleType="fitXY"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/iv_logo_margin"/>
 
