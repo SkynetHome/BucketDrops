@@ -15,6 +15,7 @@
 
     <Button
         android:background="@drawable/bg_btn_add_it"
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-thin"
