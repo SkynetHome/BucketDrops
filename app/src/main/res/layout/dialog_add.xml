@@ -29,6 +29,7 @@
         android:id="@+id/et_drop"
         android:layout_below="@+id/tv_title"
         android:hint="@string/hint_et_drop"
+        android:inputType="textVisiblePassword"
         android:padding="16dp"/>
     
     <DatePicker
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_add_it"
         android:layout_below="@+id/bpv_date"
-        android:textAllCaps="false" 
+        android:textAllCaps="false"
         android:text="@string/str_add_it"/>
 
 
