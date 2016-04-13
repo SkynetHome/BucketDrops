@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import com.adeptimpulse.bucketdrops.app.adapters.AdapterDrops;
+import com.adeptimpulse.bucketdrops.app.adapters.AddListener;
 import com.adeptimpulse.bucketdrops.app.adapters.Divider;
 import com.adeptimpulse.bucketdrops.app.beans.Drop;
 import com.adeptimpulse.bucketdrops.app.widgets.BucketRecyclerView;
@@ -25,6 +26,12 @@ public class ActivityMain extends AppCompatActivity {
     View mEmptyView;
     RealmResults<Drop> mResults;
     AdapterDrops mAdapterDrops;
+    private AddListener mAddListener= new AddListener() {
+        @Override
+        public void add() {
+            showDialogAdd();
+        }
+    };
 
 
     @Override
@@ -39,7 +46,8 @@ public class ActivityMain extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mRealm = Realm.getDefaultInstance();
         mResults = mRealm.where(Drop.class).findAllAsync();
-        mAdapterDrops = new AdapterDrops(this, mResults);
+        mAdapterDrops = new AdapterDrops(this, mResults, mAddListener);
+
         mRecyclerView.addItemDecoration(new Divider(this, LinearLayoutManager.VERTICAL));
         mRecyclerView.hideIfEmpty(mToolbar);
         mRecyclerView.showIfEmpty(mEmptyView);
