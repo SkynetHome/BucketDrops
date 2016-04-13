@@ -5,21 +5,23 @@
     tools:context="${relativePackage}.${activityClass}">
 
 
-    <include layout="@layout/toolbar"/>
+
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/iv_background"
-        android:layout_below="@+id/toolbar"/>
+        android:id="@+id/iv_background"/>
 
-    <android.support.v7.widget.RecyclerView
+    <include android:id="@+id/toolbar" layout="@layout/toolbar"/>
+
+    <com.adeptimpulse.bucketdrops.app.widgets.BucketRecyclerView
         android:id="@+id/rv_drops"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"/>
 
 
-    <include layout="@layout/empty_drops"/>
+    <include android:id="@+id/empty_drops"
+             layout="@layout/empty_drops"/>
 
 </RelativeLayout>
